@@ -1,0 +1,116 @@
+@import '../global.scss';
+
+html {
+  height: 100%;
+  background-color: $white;
+}
+
+body {
+  min-width: 375px;
+  min-height: 100%;
+  @extend %xyCenter;
+  position: relative;
+  font-family: $body-font;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+#root {
+  width: 100%;
+}
+
+header {
+  @extend %back-gradient;
+  min-height: 44px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: right;
+  overflow: hidden;
+  padding: 2px 10px;
+  background-color: $blue;
+  color: $white;
+
+  #headerText {
+    position: absolute;
+    z-index: -5;
+    font-size: 42px;
+    font-weight: bold;
+    font-family: $header-font;
+    letter-spacing: 10px;
+    white-space: nowrap;
+    color: $black;
+  }
+}
+
+main {
+  max-width: 960px;
+  margin: 54px auto 0;
+}
+
+section {
+  @extend %back-gradient;
+  @include thin-border($shadow);
+  margin: 0 auto;
+  padding: $wide-padding;
+
+  @media screen and (max-width: $small-breakpoint) {
+    padding: $standard-padding;
+  }
+}
+
+.button {
+  @include thin-border($black);
+  display: inline-block;
+  padding: $standard-padding;
+  margin-right: 4px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+input, select {
+  display: block;
+  box-sizing: border-box;
+  padding: 2px;
+  margin: 10px 0;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.msg {
+  @extend %xyCenter;
+  color: darkred;
+  padding: $standard-padding;
+}
+
+i {
+  font-style: italic;
+}
+
+b {
+  font-weight: bold;
+}
+
+#background {
+  @extend %page-background;
+  background-image: url('../images/newspaper-background.jpg');
+  background-size: cover;
+
+  animation: landing-image;
+  animation-duration: 6s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+@keyframes landing-image {
+  from {transform: scale(1.08)}
+  to {transform: scale(1)};
+}

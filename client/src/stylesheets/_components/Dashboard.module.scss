@@ -1,0 +1,160 @@
+@import '../global.scss';
+
+.section {
+  background-color: $dark-green;
+  margin: $standard-padding;
+
+  & > * {
+    margin: $vertical-space 0;
+  }
+
+  @media screen and (max-width: $small-breakpoint) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  h2 {
+    font-family: $header-font;
+    font-size: $header-size;
+    font-weight: bold;
+    color: $more-black;
+    margin-bottom: 20px;
+    cursor: default;
+  }
+}
+
+.resultsWrapper {
+  max-height: 400px;
+  overflow: auto;
+  margin-top: 20px;
+}
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  padding: $standard-padding;
+  margin-bottom: $vertical-space;
+  background-color: $shadow;
+  @extend %back-gradient;
+
+  .articleButtons {
+    flex-shrink: 0;
+    padding-left: $vertical-space;
+  }
+}
+
+.recentArticle {
+  display: flex;
+  margin: $vertical-space 0;
+
+  .imgWrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+    height: 175px;
+    overflow: hidden;
+    margin-right: $vertical-space;
+    @include thin-border($shadow);
+    background-color: $more-black;
+
+    .img {
+      max-height: 100%;
+    }
+  }
+
+  .article {
+    margin-bottom: 0;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  @media screen and (max-width: $small-breakpoint) {
+    flex-direction: column;
+
+    .imgWrapper {
+      max-width: none;
+      margin-right: 0;
+
+      .img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.modalWrapper {
+  @extend %cover;
+  position: fixed;
+  @extend %xyCenter;
+  background-color: $more-black;
+
+  section {
+    background-color: $green;
+
+    .ratingField {
+      display: flex;
+      flex-direction: column;
+
+      & > * {
+        margin: $vertical-space 0;
+      }
+    }
+
+    .ratingScale {
+      display: flex;
+
+      & > span {
+        flex-grow: 1;
+        text-align: center;
+        padding: $standard-padding;
+        cursor: pointer;
+
+        &:first-child {
+          border-left: 3px solid $highlight;
+        }
+      }
+
+      .highlight {
+        background-color: $highlight;
+      }
+    }
+  }
+}
+
+.source {
+  display: flex;
+  justify-content: space-between;
+  margin: $vertical-space 0;
+  @extend %back-gradient;
+  cursor: default;
+
+  @media screen and (max-width: $small-breakpoint) {
+    flex-direction: column;
+  }
+
+  h3 {
+    font-size: $header-size;
+  }
+
+  & > div {
+    padding: $standard-padding;
+    
+    &:first-child {
+      background-color: $green;
+      flex-grow: 1;
+    }
+
+    &:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+      background-color: $highlight;
+
+      @media screen and (max-width: $small-breakpoint) {
+        flex-direction: row;
+      }
+    }
+  }
+
+}

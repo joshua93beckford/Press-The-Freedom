@@ -1,0 +1,10 @@
+.section {
+  background-color: rgba(89, 169, 121, 0.9);
+  min-width: 345px;
+  text-align: center;
+  max-width: 500px; }
+  .section div {
+    padding: 10px 16px; }
+  .section span {
+    margin: 0 4px;
+    min-width: 44px; }

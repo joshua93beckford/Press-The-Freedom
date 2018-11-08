@@ -1,0 +1,17 @@
+@import '../global.scss';
+
+.section {
+  background-color: $green;
+  min-width: 345px;
+  text-align: center;
+  max-width: 500px;
+
+  & div {
+    padding: $standard-padding;
+  }
+
+  & span {
+    margin: 0 4px;
+    min-width: 44px;
+  }
+}

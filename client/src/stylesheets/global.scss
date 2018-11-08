@@ -1,0 +1,59 @@
+$block-opacity: 0.9;
+$black: #333;
+$light-black: rgba(0,0,0,0.05);
+$more-black: rgba(0, 0, 0, 0.5);
+$grey: #777;
+$shadow: rgba(229, 225, 225, 0.7);
+$white: snow;
+$green: rgba(89,169,121, $block-opacity);
+$dark-green: rgba(62,120,85, $block-opacity);
+$blue: rgba(62,95,118, $block-opacity);
+$highlight: #f0f066; 
+
+$small-breakpoint: 540px;
+
+$body-font: 'Open Sans', Arial, sans-serif;
+$header-font: 'Raleway', Arial, sans-serif;
+$header-size: 20px;
+
+$standard-padding: 10px 16px;
+$wide-padding: 20px 32px;
+$vertical-space: 10px;
+
+@mixin thin-border($color) {
+  border: 1px solid $color;
+}
+
+%xCenter {
+  display: flex;
+  justify-content: center;
+}
+
+%xyCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+%back-gradient {
+  background-image: linear-gradient(to bottom right, $light-black, transparent);
+}
+
+%page-background {
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 8px;
+}
